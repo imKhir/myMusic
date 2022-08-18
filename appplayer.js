@@ -31,43 +31,43 @@ const app = {
         {
         name: "English Acoustic Love Songs 2021",
         singer: "Acoustic 8PM",
-        path: "./assets/music/English Acoustic Love Songs 2021.mp3",
+        path: "./assets/music/16 Typh 16 BrT Lil Wuyn RIC  SUNDAY HIPHOP CYPHER Official MV.mp3",
         image: "./assets/imgs/songImg/English Acoustic Love Songs 2021.jpg"
         },
         {
         name: "English Acoustic Cover Love Songs 2021",
         singer: "Acoustic Songs Collection",
-        path: "./assets/music/English Acoustic Cover Love Songs 2021.mp3",
+        path: "./assets/music/BASS6 x 95G  PHI HÀNH GIA  RENJA x SLOW T x LIL WUYN x KAIN x SUGAR CANE Prod THINHHO.mp3",
         image:"./assets/imgs/songImg/English Acoustic Cover Love Songs 2021.jpg"
         },
         {
         name: "Gangster Rap Trap Mix",
         singer: "The Amazing 10",
-        path:"./assets/music/Gangster Rap Trap Mix.mp3",
+        path:"./assets/music/CUA.mp3",
         image: "./assets/imgs/songImg/Gangster Rap Trap Mix.jpg"
         },
         {
         name: "Lofi beat so chill",
         singer: "ANT Muzik",
-        path: "./assets/music/Lofi beat so chill.mp3",
+        path: "./assets/music/HIEUTHUHAI  CHƠI rmx FtMANBO LvK x BILLY100.mp3",
         image:"./assets/imgs/songImg/Lofi beat so chill.jpg"
         },
         {
         name: "Relax beats to sleepstudy x Fall In Luv",
         singer: "Fall In Chill",
-        path: "./assets/music/Relax beats to sleepstudy x Fall In Luv.mp3",
+        path: "./assets/music/LIL WUYN  THAY ĐỔI  HỘI NGHE  S04E24.mp3",
         image:"./assets/imgs/songImg/Relax beats to sleepstudy x Fall In Luv.jpg"
         },
         {
         name: "Hip HopTrap Instrumental Beats Mix 2019",
         singer: "Nicop Records",
-        path:"./assets/music/Hip HopTrap Instrumental Beats Mix 2019.mp3",
+        path:"./assets/music/Thủ Đô Cypher  BeckStage X Bitis Hunter  RPT Orijinn LOW G RZMas RPT MCK.mp3",
         image:"./assets/imgs/songImg/Hip HopTrap Instrumental Beats Mix 2019.jpg"
         },
         {
         name: "Nhạc English Nhẹ Nhàng Chill Acoustic",
         singer: "ANT muzik",
-        path: "./assets/music/Nhạc English Nhẹ Nhàng Chill Acoustic.mp3",
+        path: "./assets/music/Chơi Đồ.mp3",
         image:"./assets/imgs/songImg/Nhạc English Nhẹ Nhàng Chill Acoustic.jpg"
         }
     ],
