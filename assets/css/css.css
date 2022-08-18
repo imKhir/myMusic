@@ -1,0 +1,462 @@
+:root {
+  --primary-color: #ec1f55;
+  --text-color: #333;
+}
+  
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+body {
+  background-image: url(/assets/imgs/backgroundImg/background.gif);
+  background-position: center;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  background-repeat: no-repeat;
+  overflow-x: hidden;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+/* ------------------------Buttons------------------------ */
+.background-btn,
+.pomodoro-btn,
+.player-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  min-height: 44px;
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(129,14,219,1) 0%, rgba(249,138,214,1) 100%);
+  padding: 0 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+  color: #ffffff;
+  font-size: 14px;
+  outline: none;
+  position: relative;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-align: center;
+  user-select: none;
+}
+.background-btn:before,
+.background-btn:after,
+.pomodoro-btn:before,
+.pomodoro-btn:after,
+.player-btn:before,
+.player-btn:after {
+  border-color: transparent;
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
+  border-style: solid;
+  border-width: 0;
+  content: "";
+  height: 24px;
+  position: absolute;
+  width: 24px;
+}
+.background-btn::before,
+.pomodoro-btn::before,
+.player-btn:before {
+  border-color: rgba(129,14,219,1);
+  border-top-width: 2px;
+  left: 0px;
+  top: -5px;
+}
+.background-btn::after,
+.pomodoro-btn::after,
+.player-btn:after {
+  border-bottom-width: 2px;
+  border-color: rgba(249,138,214,1);
+  bottom: -5px;
+  right: 0px;
+}
+.background-btn:hover:before,
+.background-btn.hover:before,
+.background-btn:hover:after,
+.background-btn.hover:after,
+.pomodoro-btn:hover:before,
+.pomodoro-btn.hover:before,
+.pomodoro-btn:hover:after,
+.pomodoro-btn.hover:after,
+.player-btn:hover:before,
+.player-btn.hover:before,
+.player-btn:hover:after,
+.player-btn.hover:after {
+  height: 100%;
+  width: 100%;
+}
+.pomodoro--change {
+  right: 0 !important;
+  animation: backgroundSideIn linear 0.3s;
+}
+.background--change {
+  left: 0 !important;
+  animation: backgroundSideIn linear 0.3s;
+  /* animation: backgroundSideOut linear .3s; */
+}
+.player--change {
+  left: 0 !important;
+  animation: backgroundSideIn linear 0.3s;
+}
+
+@keyframes backgroundSideIn {
+  from {
+      opacity: 0;
+      transform: translatex(-200px);
+  } to {
+      right: 0;
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+/* @keyframes backgroundSideOut {
+  from {
+      opacity: 0;
+      transform: translatex(0);
+  } to {
+      right: 0;
+      opacity: 1;
+      transform: translateX(200px);
+  }
+} */
+/* ------------------------Player------------------------ */
+.btn-list {
+  display: flex;
+  position: relative;
+  top: 10px;
+}
+.btn-list > li {
+  margin-right: 15px;
+}
+.player-wrap {
+  position: relative;
+  top: 30px;
+  left: -410px;
+  max-width: 400px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+.player {
+  position: relative;
+  left: 20px;
+  float: left;
+  max-width: 400px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+
+.player .icon-pause {
+  display: none;
+}
+
+.player.playing .icon-pause {
+  display: inline-block;
+}
+
+.player.playing .icon-play {
+  display: none;
+}
+
+.dashboard {
+  padding: 16px 16px 14px;
+  background-color: #fff;
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(129,14,219,1) 0%, rgba(249,138,214,1) 100%);
+  width: 100%;
+  max-width: 400px;
+  border-bottom: 1px solid var(--primary-color);
+  border-radius: 10px;
+}
+
+/* HEADER */
+header {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+header h4 {
+  color: var(--primary-color);
+  font-size: 12px;
+}
+
+header h2 {
+  color: var(--text-color);
+  font-size: 20px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+/* CD */
+.cd {
+  display: flex;
+  margin: auto;
+  width: 200px;
+}
+
+.cd-thumb {
+  width: 100%;
+  padding-top: 100%;
+  border-radius: 50%;
+  background-color: #333;
+  background-size: cover;
+  margin: auto;
+}
+
+/* CONTROL */
+.control {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 18px 0 8px 0;
+}
+
+.control .btn {
+  color: var(--text-color);
+  padding: 18px;
+  font-size: 18px;
+}
+
+.control .btn.active {
+  color: var(--primary-color);
+}
+
+.control .btn-toggle-play {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  font-size: 24px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-color);
+}
+
+.progress {
+  width: 100%;
+  -webkit-appearance: none;
+  height: 6px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+  margin: 0 16px;
+}
+
+.progress::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 6px;
+  background-color: var(--primary-color);
+  cursor: pointer;
+}
+
+/* PLAYLIST */
+.playlist {
+  padding: 12px;
+  max-height: 300px;
+  overflow-x: hidden;
+}
+
+.song {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  background-color: #fff;
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(129,14,219,1) 0%, rgba(249,138,214,1) 100%);
+  padding: 8px 16px;
+  border-radius: 5px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.song.active {
+  background: var(--primary-color) !important;
+}
+
+.song:active {
+  opacity: 0.8;
+}
+
+.song.active .option,
+.song.active .author,
+.song.active .title {
+  color: #fff;
+}
+
+.song .thumb {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-size: cover;
+  margin: 0 8px;
+}
+
+.song .body {
+  flex: 1;
+  padding: 0 16px;
+}
+
+.song .title {
+  font-size: 18px;
+  color: var(--text-color);
+}
+
+.song .author {
+  font-size: 12px;
+  color: var(--text-color);
+}
+
+.song .option {
+  padding: 16px 8px;
+  color: var(--text-color);
+  font-size: 18px;
+}
+
+/* ------------------------Background------------------------ */
+  /* background-btn  */
+  
+  /* .background-btn span {
+    user-select: none;
+  } */
+
+.background-list {
+  position: absolute;
+  top: 70px;
+  left: -210px;
+  cursor: pointer;
+}
+
+.background-item .background-img {
+  width: 200px;
+  height: 70px;
+  border-radius: .5rem;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  margin-bottom: 8px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+  opacity: .5;
+
+}
+
+.background-img:hover {
+  opacity: 1;
+}
+
+.background-item.active .background-img{
+  opacity: 1 !important;
+}
+
+/* ------------------------pomodoro------------------------ */
+  #pomodoro-app {
+    position: absolute;
+    right: 0;
+  }
+  #container{
+    display: flex;
+    border-radius :20px;
+    width:400px;
+    text-align:center;
+    background : rgba(0, 0, 0, 0.25);
+  }
+  
+  #timer{ 
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    color:#f00; 
+    font-size:25px; 
+    margin:10px auto;
+    border : 5px solid red;
+    border-radius:50%;
+    width:150px;
+    height:150px;
+    overflow:hidden;
+    position:relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor:default;
+  }
+  
+  #time{
+    width: 100%;
+    z-index : 1;
+    position:relative;
+  }
+  
+  #filler{
+    background : #ddffcc;
+    height: 0px;
+    width: 200px;
+    position:absolute;
+    bottom:0;
+  }
+  #buttons {
+    width: 200px;
+    padding-top: 15px;
+  }
+  #buttons button { 
+    background:#4da6ff; 
+    border:none; 
+    color:#fff; 
+    cursor:pointer; 
+    padding:5px; 
+    width:90px; 
+    margin:10px auto;
+    font-size:14px;
+    height : 50px;
+    border-radius : 50px;
+  }
+  
+  #buttons button#shortBreak{
+    background : #0c0;
+  }
+  
+  #buttons button#longBreak{
+    background : #080;
+  }
+  
+  #buttons button#stop{
+    background : #f00;
+  }
+  
+
+/* CSS ::-webkit-scrollbar  */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 5px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.25);
+}
+
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(129,14,219,1) 0%, rgba(249,138,214,1) 100%);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #ec1f55;
+}
+
+.bar-song {
+  display: flex;
+  align-items: center;
+}
