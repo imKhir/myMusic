@@ -72,8 +72,8 @@ const backgroundSlide = {
         // Xử lý hành vi click backgroundBtn
         changeBackground.onclick = function () {
             if (backgroundList) {
-                backgroundList.classList.toggle("background--change")
                 playerWrap.classList.remove("player--change")
+                backgroundList.classList.toggle("background--change")
             }
         }
     },

@@ -25,7 +25,7 @@ html {
 }
 /* ------------------------Buttons------------------------ */
 .background-btn,
-.pomodoro-btn,
+/* .pomodoro-btn, */
 .player-btn {
   display: flex;
   align-items: center;
@@ -48,8 +48,8 @@ html {
 }
 .background-btn:before,
 .background-btn:after,
-.pomodoro-btn:before,
-.pomodoro-btn:after,
+/* .pomodoro-btn:before,
+.pomodoro-btn:after, */
 .player-btn:before,
 .player-btn:after {
   border-color: transparent;
@@ -63,7 +63,7 @@ html {
   width: 24px;
 }
 .background-btn::before,
-.pomodoro-btn::before,
+/* .pomodoro-btn::before, */
 .player-btn:before {
   border-color: rgba(129,14,219,1);
   border-top-width: 2px;
@@ -71,7 +71,7 @@ html {
   top: -5px;
 }
 .background-btn::after,
-.pomodoro-btn::after,
+/* .pomodoro-btn::after, */
 .player-btn:after {
   border-bottom-width: 2px;
   border-color: rgba(249,138,214,1);
@@ -82,10 +82,10 @@ html {
 .background-btn.hover:before,
 .background-btn:hover:after,
 .background-btn.hover:after,
-.pomodoro-btn:hover:before,
+/* .pomodoro-btn:hover:before,
 .pomodoro-btn.hover:before,
 .pomodoro-btn:hover:after,
-.pomodoro-btn.hover:after,
+.pomodoro-btn.hover:after, */
 .player-btn:hover:before,
 .player-btn.hover:before,
 .player-btn:hover:after,
@@ -93,40 +93,28 @@ html {
   height: 100%;
   width: 100%;
 }
-.pomodoro--change {
+/* .pomodoro--change {
   right: 0 !important;
   animation: backgroundSideIn linear 0.3s;
-}
+} */
 .background--change {
   left: 0 !important;
-  animation: backgroundSideIn linear 0.3s;
-  /* animation: backgroundSideOut linear .3s; */
+  animation: sideIn linear 0.3s;
 }
 .player--change {
   left: 0 !important;
-  animation: backgroundSideIn linear 0.3s;
+  animation: sideIn linear 0.3s;
 }
 
-@keyframes backgroundSideIn {
+@keyframes sideIn {
   from {
       opacity: 0;
       transform: translatex(-200px);
   } to {
-      right: 0;
       opacity: 1;
       transform: translateX(0);
   }
 }
-/* @keyframes backgroundSideOut {
-  from {
-      opacity: 0;
-      transform: translatex(0);
-  } to {
-      right: 0;
-      opacity: 1;
-      transform: translateX(200px);
-  }
-} */
 /* ------------------------Player------------------------ */
 .btn-list {
   display: flex;
@@ -378,12 +366,12 @@ header h2 {
     align-items: center;
     justify-self: center;
     color:#f00; 
-    font-size:25px; 
+    font-size:14px; 
     margin:10px auto;
     border : 5px solid red;
     border-radius:50%;
-    width:150px;
-    height:150px;
+    width:75px;
+    height:75px;
     overflow:hidden;
     position:relative;
     -webkit-user-select: none;
@@ -407,8 +395,11 @@ header h2 {
     bottom:0;
   }
   #buttons {
-    width: 200px;
-    padding-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 300px;
+    /* padding-top: 15px; */
   }
   #buttons button { 
     background:#4da6ff; 
@@ -416,11 +407,11 @@ header h2 {
     color:#fff; 
     cursor:pointer; 
     padding:5px; 
-    width:90px; 
+    width:45px; 
     margin:10px auto;
     font-size:14px;
     height : 50px;
-    border-radius : 50px;
+    border-radius : 6px;
   }
   
   #buttons button#shortBreak{
