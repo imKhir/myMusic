@@ -29,46 +29,58 @@ const app = {
 
     songs: [
         {
-        name: "English Acoustic Love Songs 2021",
-        singer: "Acoustic 8PM",
+        name: "SUNDAY HIPHOP CYPHER",
+        singer: "16 Typh 16 BrT Lil Wuyn RIC",
         path: "./assets/music/16 Typh 16 BrT Lil Wuyn RIC  SUNDAY HIPHOP CYPHER Official MV.mp3",
-        image: "./assets/imgs/songImg/English Acoustic Love Songs 2021.jpg"
+        image: "https://zmp3-photo-fbcrawler.zadn.vn/thumb_video/f/b/8/e/fb8ee5871fa4807c41aa2235ae9f0fa6.jpg"
         },
         {
-        name: "English Acoustic Cover Love Songs 2021",
-        singer: "Acoustic Songs Collection",
+        name: "PHI HÀNH GIA",
+        singer: "RENJA x SLOW T x LIL WUYN x KAIN x SUGAR CANE",
         path: "./assets/music/BASS6 x 95G  PHI HÀNH GIA  RENJA x SLOW T x LIL WUYN x KAIN x SUGAR CANE Prod THINHHO.mp3",
-        image:"./assets/imgs/songImg/English Acoustic Cover Love Songs 2021.jpg"
+        image:"https://photo2.tinhte.vn/data/attachment-files/2021/12/5773548_Cover_thuc-an-khong-gian.png"
         },
         {
-        name: "Gangster Rap Trap Mix",
-        singer: "The Amazing 10",
+        name: "CUA",
+        singer: "Hieuthuhai",
         path:"./assets/music/CUA.mp3",
-        image: "./assets/imgs/songImg/Gangster Rap Trap Mix.jpg"
+        image: "https://i1.sndcdn.com/artworks-2VzsDyLQyWbjf0uD-aOtO8Q-t500x500.jpg"
         },
         {
-        name: "Lofi beat so chill",
-        singer: "ANT Muzik",
+        name: " CHƠI",
+        singer: "HIEUTHUHAI",
         path: "./assets/music/HIEUTHUHAI  CHƠI rmx FtMANBO LvK x BILLY100.mp3",
-        image:"./assets/imgs/songImg/Lofi beat so chill.jpg"
+        image:"https://images.genius.com/8b2c221d45d74973af2726b90cb1e202.1000x1000x1.png"
         },
         {
-        name: "Relax beats to sleepstudy x Fall In Luv",
-        singer: "Fall In Chill",
+        name: "THAY ĐỔI",
+        singer: "LIL WUYN",
         path: "./assets/music/LIL WUYN  THAY ĐỔI  HỘI NGHE  S04E24.mp3",
-        image:"./assets/imgs/songImg/Relax beats to sleepstudy x Fall In Luv.jpg"
+        image:"https://avatar-ex-swe.nixcdn.com/singer/avatar/2020/06/08/1/f/f/2/1591582947365_600.jpg"
         },
         {
-        name: "Hip HopTrap Instrumental Beats Mix 2019",
-        singer: "Nicop Records",
+        name: "Thủ Đô Cypher",
+        singer: "BeckStage X Bitis Hunter RPT Orijinn LOW G",
         path:"./assets/music/Thủ Đô Cypher  BeckStage X Bitis Hunter  RPT Orijinn LOW G RZMas RPT MCK.mp3",
-        image:"./assets/imgs/songImg/Hip HopTrap Instrumental Beats Mix 2019.jpg"
+        image:"https://images.genius.com/7263a9d590cc8d8155d97c17bac5c016.500x500x1.jpg"
         },
         {
-        name: "Nhạc English Nhẹ Nhàng Chill Acoustic",
-        singer: "ANT muzik",
+        name: "Chơi Đồ",
+        singer: "MCK",
         path: "./assets/music/Chơi Đồ.mp3",
-        image:"./assets/imgs/songImg/Nhạc English Nhẹ Nhàng Chill Acoustic.jpg"
+        image:"https://avatar-ex-swe.nixcdn.com/singer/avatar/2020/11/16/6/5/0/2/1605491409204_600.jpg"
+        },
+        {
+        name: "Em iu",
+        singer: "Andree",
+        path: "./assets/music/Andree Right Hand  Em iu feat Wxrdie Bình Gold 2pillz  Official MV.mp3",
+        image:"https://i1.sndcdn.com/artworks-EE7n9I22sVC8Jebl-2wHRag-t500x500.jpg"
+        },
+        {
+        name: "iceMan",
+        singer: "Sol7 ft MCK",
+        path: "./assets/music/Sol7 ft MCK  iceMan Prod Yung Lando Yung Tago.mp3",
+        image:"https://avatar-ex-swe.nixcdn.com/song/2021/03/03/3/4/4/5/1614785212642_640.jpg"
         }
     ],
     setConfig: function (key, value) {
@@ -225,14 +237,14 @@ const app = {
                     audio.play();
                 }
 
-                // Xử lý khi click vào song option
-                // if (e.target.closest(".option")) {
-                // }
-
-
+                //xử lý khi click vào option
+                if(e.target.closest('.option')) {
+                    alert("Chưa kịp làm! HEHE ^^")
+                }
             }
         };
         
+        // Xử lý thời lượng bài hát
         audio.ontimeupdate = function () {
             //Hiển thị thời gian trên thanh progress
             if (audio.duration) {
@@ -243,37 +255,24 @@ const app = {
                 var e = Math.floor(audio.currentTime);
                 var d = e % 60; // Số giây
                 var b = Math.floor(e / 60); // Số phút
-                var f = Math.floor(b / 60 ); 
                 if (d < 10) {
                     var c = 0;
                 } else {
-                    var c = "";
+                    c = "";
                 }
-                if (b > 59) {
-                    var b = b - 60;
-                }
-                if (b < 10) {
-                    var g = "0";
-                } else {
-                    var g = "";
-                }
-                timeCurrent.textContent = "0" + f + ":" + g + b + ":" + c + d;
-        
+                timeCurrent.textContent = '0' + b + ":" + c + d;
+            
                 // Đếm thời gian của thời lượng âm thanh
                 var ee = Math.floor(audio.duration);
                 var dd = ee % 60; //số giây
                 var bb = Math.floor(ee / 60); //số phút
-                var ff = Math.floor(bb / 60 ); 
-                if (bb > 59) {
-                    var bb = bb - 60;
-                }
-                if (bb < 10) {
-                    var gg = "0";
+                if (dd < 10) {
+                    var cc = 0;
                 } else {
-                    var gg = "";
+                    cc = "";
                 }
                 
-                timeDuration.textContent = "0" + ff + ":" + gg + bb + ":" + dd;
+                timeDuration.textContent = '0' + bb + ":" + cc + dd;
             }
         
             if(!audio.duration) {
@@ -282,6 +281,7 @@ const app = {
             }
         };
 
+        //Xử lý playerBtn
         playerBtn.onclick = function () {
             if (playerWrap) {
                 playerWrap.classList.toggle("player--change")
