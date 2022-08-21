@@ -36,7 +36,7 @@ const pomodoro = {
     this.minutes = mins;
     this.seconds = secs;
     this.started = started;
-    this.fillerIncrement = 200/(this.minutes*60);
+    this.fillerIncrement = 65/(this.minutes*60);
     this.fillerHeight = 0;  
   },
   startWork: function() {
